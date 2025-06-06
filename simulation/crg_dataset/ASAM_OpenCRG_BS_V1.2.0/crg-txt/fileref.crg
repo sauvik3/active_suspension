@@ -1,0 +1,59 @@
+$CT                                                 ! comment text block
+CRG file example with a reference to the effective CRG file, defining
+empty mods and opts.
+
+This (incomplete) CRG file defines a reference to a further CRG file,
+which will be evaluated for
+- CRG modifiers for runtime evaluation, if not blank defined as below
+- CRG options for runtime evaluation, if not blank defined as below
+- CRG basic data (header, reference line, evaluation grid, ...)
+
+% *****************************************************************
+% ASAM OpenCRG Matlab Example File
+%
+% OpenCRG version:           1.2.0
+%
+% package:               crg-txt
+% file name:             fileref.crg
+% author:                ASAM e.V.
+%
+%
+% C by ASAM e.V., 2020
+% Any use is limited to the scope described in the license terms.
+% The license terms can be viewed at www.asam.net/license
+%
+% More Information on ASAM OpenCRG can be found here:
+% https://www.asam.net/standards/detail/opencrg/
+%
+$!**********************************************************************
+$ROAD_CRG_FILE                                      ! crg file reference
+* The file name may be split to multiple lines, which must not contain
+* leading/trailing blanks, *, or ! to be considered as part of the name.
+* Each line length must not exceed 72 characters.
+* If a relative path is given, it is evaluated relative to the current
+* directory of the reader process.
+* If the first character is a $, subsequent characters will be replaced
+* by the contents of the equivalent environment variable.
+*
+* > /home/name/crg-files/handmade_straight.crg  ! absolute path
+*
+* > /home/name/crg-files/hand                   ! absolute path
+* >  made_straight.crg                          ! split in 2 lines
+*
+* > $crgpath/handmake_straight.crg              ! replace $crgpath by
+* >                                             ! it's envvar contents
+*
+  ../crg-txt/handmade_curved_banked_sloped.crg  ! relative path
+$!**********************************************************************
+$ROAD_CRG_MODS                        ! crg runtime evaluation modifiers
+* A modifier block in this file will substitute the complete modifier
+* block in the referenced CRG file.
+* This empty option block does this as well, such that any option
+* defined in the referenced CRG file will be ignored.
+$!**********************************************************************
+$ROAD_CRG_OPTS                          ! crg runtime evaluation options
+* An option block in this file will substitute the complete option block
+* in the referenced CRG file.
+* This empty option block does this as well, such that any option
+* defined in the referenced CRG file will be ignored.
+$!**********************************************************************
