@@ -1,0 +1,74 @@
+$CT                                                 ! comment text block
+CRG file example for road surface description (width: 3m, length: 22m)
+with un-sloped reference line and grid of (0.25m...1.0m) x 1.0m
+
+% *****************************************************************
+% ASAM OpenCRG Matlab Example File
+%
+% OpenCRG version:           1.2.0
+%
+% package:               crg-txt
+% file name:             handmade_platform.crg
+% author:                ASAM e.V.
+%
+%
+% C by ASAM e.V., 2020
+% Any use is limited to the scope described in the license terms.
+% The license terms can be viewed at www.asam.net/license
+%
+% More Information on ASAM OpenCRG can be found here:
+% https://www.asam.net/standards/detail/opencrg/
+%
+$!**********************************************************************
+$ROAD_CRG                                          ! crg road parameters
+REFERENCE_LINE_START_U   = 0.0
+REFERENCE_LINE_START_X   = 0.0
+REFERENCE_LINE_START_Y   = 0.0
+REFERENCE_LINE_START_PHI = 0.0
+REFERENCE_LINE_END_U     = 22.0
+REFERENCE_LINE_END_PHI   = 0.0
+REFERENCE_LINE_INCREMENT = 1.0
+LONG_SECTION_V_RIGHT     =-1.50         ! with explicit definition below
+LONG_SECTION_V_LEFT      = 1.50         ! with explicit definition below
+$!**********************************************************************
+$ROAD_CRG_MODS                                      ! set only one (default) modifier
+grid_nan_mode = 2.000000000+e00
+$!**********************************************************************
+$KD_Definition                                   ! data definition block
+#:LRFI                           ! one of the men readable IPLOS formats
+U:reference line x,m,0,1.0     ! virtual channel, only for IPLOS viewing
+D:reference line slope,m/m                          ! longitudinal slope
+D:long section at v = -1.500,m           ! 1.50m right of reference line
+D:long section at v = -1.250,m           ! 1.25m right of reference line
+D:long section at v = -1.000,m           ! 1.00m right of reference line
+D:long section at v =  0.000,m           !             on reference line
+D:long section at v =  1.000,m           ! 1.00m left  of reference line
+D:long section at v =  1.250,m           ! 1.25m left  of reference line
+D:long section at v =  1.500,m           ! 1.50m left  of reference line
+$!**********************************************************************
+* slope     l_sec 1   l_sec 2   l_sec 3   l_sec 4   l_sec 5   l_sec 6   l_sec 7
+*           v=-1.50   v=-1.25   v=-1.00   v= 0.00   v= 1.00   v= 1.25   v= 1.50
+$$$$$$$$$0$$$$$$$$$0$$$$$$$$$0$$$$$$$$$0$$$$$$$$$0$$$$$$$$$0$$$$$$$$$0$$$$$$$$$0
+**unused** 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
+ 0.0000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000 1.5000000
+ 0.0000000 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999 0.9999999
